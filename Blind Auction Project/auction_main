@@ -1,0 +1,22 @@
+from art import logo
+print(logo)
+dictionary = {}
+max_price = 0
+flag = True
+while flag:
+    name = input("What is your name? ")
+    price = float(input("What is your bid? $"))
+    dictionary[name] = price
+    if price > max_price:
+        max_price = price
+
+    other = input("Are there any other bidders? Type 'yes' or 'no' ")
+
+    if other == 'no':
+        flag = False
+    else:
+        print('\n' *20)  # clear the screen
+
+for key in dictionary:
+    if max_price == dictionary[key]:
+        print(f'The winner is {key} with a bid of ${max_price}')
